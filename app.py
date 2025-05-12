@@ -1,6 +1,3 @@
-# Mise à jour du code app.py avec un filtre par plage de semaines et une recherche textuelle d'antibiotique
-
-enhanced_app_code = '''
 import pandas as pd
 import numpy as np
 import plotly.graph_objs as go
@@ -90,14 +87,7 @@ def update_graph(search_value, week_range):
         matching = [col for col in columns_to_plot if search_value.lower() in col.lower()]
         if matching:
             return generate_figure(matching[0], week_range)
-    # Fallback
     return generate_figure(columns_to_plot[0], week_range)
 
 if __name__ == "__main__":
     app.run_server(debug=True)
-'''
-
-# Sauvegarder le fichier app.py mis à jour
-with open("/mnt/data/app_filtered.py", "w") as f:
-    f.write(enhanced_app_code)
-
